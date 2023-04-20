@@ -1,0 +1,61 @@
+﻿
+@model VTNN.DataAccess.Data.User
+
+<section class="header-part">
+    <div class="container">
+        <div class="header-content">
+            <div class="header-media-group">
+                <button class="header-user">
+                    <img src="~/wwwroot/images/user.png" alt="user" />
+                </button><a href="@Url.Action("Index","Home")">
+                    <img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png" alt="logo" />
+                </a><button class="header-src">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <a href="@Url.Action("Index","Home")" class="header-logo">
+                <img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png" alt="logo" />
+            </a>
+
+            @if (Session["user"] == null)
+            {
+                <a href="@Url.Action("Login","Profile")"
+                   class="header-widget" title="Đăng nhập">
+                    <img src="~/wwwroot/images/user.png" alt="user" /><span>Đăng nhập</span>
+                </a>
+            }
+            else
+            {
+                <a href="@Url.Action("Index","Profile")"
+                   class="header-widget" title="Tài khoản">
+                    <img src="~/wwwroot/images/user.png" alt="user" /><span>@Model.FullName</span>
+                </a>
+                <div style="margin-left: 30px;">
+                    <a href="@Url.Action("Logout","Profile")">Thoát</a>
+                </div>
+
+            }
+            @*<form onsubmit="onSearch()" class="header-form">*@
+            <div class="header-form">
+                <input id="keyword" type="text" placeholder="Tìm kiếm..." />
+                <button type="button" onclick="onSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            @*</form>*@
+            <div class="header-widget-group">
+                <a class="header-widget header-cart" title="Cartlist" href="/Checkout">
+                    <i class="fas fa-shopping-basket"></i><sup id="hdk-count">0</sup><span>Tổng<small id="total-amount">Chưa có sản phẩm</small></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const onSearch = () => {
+        const keyword = document.getElementById("keyword").value;
+
+        window.location = `/Product/Search?keyword=${keyword}`;
+    }
+</script>

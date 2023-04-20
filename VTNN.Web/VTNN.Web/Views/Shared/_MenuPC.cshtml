@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<VTNN.DataAccess.Data.Category>
+
+<nav class="navbar-part">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="navbar-content">
+                    <ul class="navbar-list">
+                        <li class="navbar-item dropdown">
+                            <a class="navbar-link" href="@Url.Action("Index","Home")">Trang chủ</a>
+                        </li>
+                        <li class="navbar-item dropdown">
+                            <a class="navbar-link dropdown-arrow" href="#">Danh mục sản phẩm</a>
+                            <ul class="dropdown-position-list">
+                                @foreach (var item in Model)
+                                {
+                                    <li><a href="@Url.Action("Detail","Category", new { id = item.CategoryId })">@item.CategoryName</a></li>
+                                }
+                            </ul>
+                        </li>
+                        <li class="navbar-item dropdown">
+                            <a class="navbar-link" href="#">Khuyến mãi</a>
+                        </li>
+                        <li class="navbar-item dropdown">
+                            <a class="navbar-link" href="#">Hệ thống cửa hàng</a>
+                        </li>
+                    </ul>
+                    <div class="navbar-info-group">
+                        <div class="navbar-info">
+                            <i class="icofont-ui-touch-phone"></i>
+                            <p><small>Hotline</small><span>0976.658.183</span></p>
+                        </div>
+                        <div class="navbar-info">
+                            <i class="icofont-ui-email"></i>
+                            <p><small>Email</small><span>contact@ecomartvietnam.vn</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
