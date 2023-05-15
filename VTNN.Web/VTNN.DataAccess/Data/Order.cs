@@ -13,14 +13,12 @@ namespace VTNN.DataAccess.Data
         {
             OrderDetails = new HashSet<OrderDetail>();
         }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
         public int OrderId { get; set; }
 
-        public int? UserId { get; set; }
+        public int UserId { get; set; }
 
-        public int? Status { get; set; }
+        public int Status { get; set; }
 
         public int? Discount { get; set; }
 

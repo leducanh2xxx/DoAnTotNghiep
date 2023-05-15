@@ -9,7 +9,14 @@
 @section addcss{
     <link href="~/wwwroot/css/custom/invoice.css" rel="stylesheet" />
 }
-
+@*<script>
+    $(function () {
+        $("#dialog").dialog();
+    });
+</script>
+<div id="dialog" title="Basic dialog">
+    <p>Đặt hàng thành công!</p>
+</div>*@
 <section class="single-banner inner-section">
     <div class="container">
         <nav aria-label="breadcrumb">
@@ -24,10 +31,10 @@
     <div class="container">
         <div class="row">
             @*<div class="col-lg-12">
-                <div class="alert-info">
-                    <p>Cảm ơn bạn! Chúng tôi đã nhận được đơn đặt hàng của bạn.</p>
-                </div>
-            </div>*@
+                    <div class="alert-info">
+                        <p>Cảm ơn bạn! Chúng tôi đã nhận được đơn đặt hàng của bạn.</p>
+                    </div>
+                </div>*@
             <div class="col-lg-6">
                 <div class="account-card">
                     <div class="account-title">
@@ -45,7 +52,7 @@
                             </li>
                             <li>
                                 <h6>Ngày đặt</h6>
-                                <p>@ViewBag.CreatedAt</p>
+                                <p>@ViewBag.Created_At</p>
                             </li>
                             <li>
                                 <h6>Địa chỉ giao hàng</h6>
@@ -87,7 +94,7 @@
                     <table class="table-list">
                         <thead>
                             <tr>
-                                <th scope="col">STT</th>
+                                <th scope="col">Mã SP</th>
                                 <th scope="col">Ảnh</th>
                                 <th scope="col">Tên</th>
                                 <th scope="col">Giá</th>
@@ -99,7 +106,7 @@
                             {
                                 <tr>
                                     <td class="table-serial">
-                                        <h6>01</h6>
+                                        <h6>@item.ProductId</h6>
                                     </td>
                                     <td class="table-image">
                                         <img src="~/wwwroot/product/images/@item.Product.Image" alt="product" />
@@ -132,6 +139,7 @@
 </section>
 
 <script>
+
     const removeLocalStorage = () => {
         localStorage.removeItem("productIds");
         localStorage.removeItem("amount");

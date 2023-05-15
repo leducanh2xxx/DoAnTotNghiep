@@ -13,12 +13,14 @@
         {
             Orders = new HashSet<Order>();
         }
-        [Key]
+
         public int UserId { get; set; }
+
         [Required(ErrorMessage = "Email không được để trống!")]
         [StringLength(100)]
         [DataType(DataType.EmailAddress, ErrorMessage = "Email không đúng định dạng")]
         public string Email { get; set; }
+
         [StringLength(11, ErrorMessage = "Số điện thoại không đúng định dạng")]
         [MaxLength(11, ErrorMessage = "Số điện thoại không đúng định dạng")]
         [Required(ErrorMessage = "Số điện thoại không được để trống!")]
@@ -41,11 +43,10 @@
         public string FullName { get; set; }
 
         [Column(TypeName = "ntext")]
-        [Required(ErrorMessage = "Địa chỉ không được để trống!")]
         public string Address { get; set; }
-        [UIHint("Role")]
-        public int? Role { get; set; }
-        [UIHint("Active")]
+
+        public int Role { get; set; }
+
         public bool Is_Active { get; set; }
 
         public DateTime? Created_At { get; set; }

@@ -36,14 +36,14 @@ namespace VTNN.Web.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.category_id = new SelectList(db.Categories, "category_id", "category_name", product.CategoryId);
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName", product.CategoryId);
             return View(product);
         }
 
         // GET: Admin/ManageProduct/Create
         public ActionResult Create()
         {
-            ViewBag.category_id = new SelectList(db.Categories, "category_id", "category_name");
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace VTNN.Web.Areas.Admin.Controllers
                 if (ModelState.IsValid)
                 {
                     product.Image = "";
-                    var f = Request.Files["product_image"];
+                    var f = Request.Files["Image"];
                     if (f != null && f.ContentLength > 0)
                     {
                         string FileName = System.IO.Path.GetFileName(f.FileName);
@@ -67,12 +67,13 @@ namespace VTNN.Web.Areas.Admin.Controllers
                     }
                     db.Products.Add(product);
                     db.SaveChanges();
+                    //TempData["Message"] = " Thêm sản phẩm thành công.";
                 }
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
-                ViewBag.category_id = new SelectList(db.Categories, "category_id", "category_name", product.CategoryId);
+                ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName", product.CategoryId);
                 ViewBag.Error = "Dữ liệu không hợp lệ!";
                 return View(product);
             }
@@ -90,7 +91,7 @@ namespace VTNN.Web.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.category_id = new SelectList(db.Categories, "category_id", "category_name", product.CategoryId);
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName", product.CategoryId);
             return View(product);
         }
 
@@ -103,7 +104,7 @@ namespace VTNN.Web.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var f = Request.Files["product_image"];
+                    var f = Request.Files["Image"];
                     if (f != null && f.ContentLength > 0)
                     {
                         string FileName = System.IO.Path.GetFileName(f.FileName);
@@ -113,13 +114,14 @@ namespace VTNN.Web.Areas.Admin.Controllers
                     }
                     db.Entry(product).State = EntityState.Modified;
                     db.SaveChanges();
+                    //TempData["Message"] = " Cập nhật sản phẩm thành công.";
                 }
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
                 ViewBag.Error = "Dữ liệu không hợp lệ!";
-                ViewBag.category_id = new SelectList(db.Categories, "category_id", "category_name", product.CategoryId);
+                ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName", product.CategoryId);
                 return View(product);
             }
 

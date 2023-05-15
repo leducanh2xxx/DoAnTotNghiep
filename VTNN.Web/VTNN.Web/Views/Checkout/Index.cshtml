@@ -10,10 +10,10 @@
 
 <section class="inner-section single-banner">
     <div class="container">
-        <h2>Thanh toán</h2>
+        <h2>Giỏ Hàng</h2>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
+            <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
         </ol>
     </div>
 </section>
@@ -49,9 +49,9 @@
                                 <li><span>Tổng tiền</span><span id="hdk-total">0 vnđ</span></li>
                             </ul>
                         </div>
-                        <form action="/Invoice/Index" method="post">
+                        <form action="/Invoice/Index/" method="post">
                             <input hidden id="ids" name="ids" />
-                            <button type="submit" class="checkout-proced btn btn-inline">Thanh toán</button>
+                            <button type="submit" class="checkout-proced btn btn-inline">Đặt Hàng</button>
                         </form>
                     </div>
                 </div>

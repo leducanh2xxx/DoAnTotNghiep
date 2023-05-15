@@ -72,10 +72,10 @@
                             @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4">Ảnh đại diện</label>
+                            <label class="col-md-4">Ảnh Sản Phẩm</label>
                             <img id="output" class="img-rounded" width="200" height="200" src="~/wwwroot/product/images/no-image-news.png" alt="Ảnh" />
                             <p class="text-center"><label for="ufile" style="cursor:pointer;">Chọn file ảnh</label></p>
-                            <input name="product_image" id="ufile" type="file" style="display:none;" onchange="loadFile(event)" />
+                            <input name="Image" id="ufile" type="file" style="display:none;" onchange="loadFile(event)" />
                         </div>
                         <div class="form-group">
                             <label>Giá bán</label>
@@ -99,7 +99,7 @@
                         </div>
                         <div class="form-group">
                             <label>Danh mục</label>
-                            @Html.DropDownList("category_id", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">

@@ -17,7 +17,7 @@
         public int CategoryId { get; set; }
 
         [Required(ErrorMessage = "Tên danh mục không được để trống")]
-        [StringLength(150)] 
+        [StringLength(150)]
         public string CategoryName { get; set; }
 
         public DateTime? Created_At { get; set; }

@@ -15,6 +15,7 @@
         }
         [Key]
         public int ProductId { get; set; }
+
         [Required(ErrorMessage = "Tên sản phẩm không được để trống")]
         [StringLength(150)]
         public string ProductName { get; set; }
@@ -30,13 +31,15 @@
 
         [Column(TypeName = "xml")]
         public string ListImage { get; set; }
-        [Required(ErrorMessage = "Mô tả không được để trống")]
+
         [Column(TypeName = "ntext")]
+        [Required(ErrorMessage = "Mô tả không được để trống")]
         public string Description { get; set; }
         [DisplayFormat(DataFormatString = "{0:#,###}")]
         [Required(ErrorMessage = "Giá không được để trống")]
-        public decimal? Price { get; set; }
-
+        public decimal Price { get; set; }
+        [DisplayFormat(DataFormatString = "{0:#,###}")]
+        //[Required(ErrorMessage = "Giá khuyến mãi không được để trống")]
         public decimal? PromotionPrice { get; set; }
         [Required(ErrorMessage = "Số lượng sản phẩm không được để trống")]
         public int? Amount { get; set; }

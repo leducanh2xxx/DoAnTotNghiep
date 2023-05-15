@@ -41,6 +41,11 @@ namespace VTNN.DataAccess.Data
                 .HasMany(e => e.OrderDetails)
                 .WithRequired(e => e.Product)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Orders)
+                .WithRequired(e => e.User)
+                .WillCascadeOnDelete(false);
         }
     }
 }

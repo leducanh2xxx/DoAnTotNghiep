@@ -27,10 +27,10 @@ namespace VTNN.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Update(FormCollection frm)
         {
-            string fullname = frm["full_name"];
-            string phone = frm["phone_number"];
-            string email = frm["email"];
-            string address = frm["address"];
+            string fullname = frm["FullName"];
+            string phone = frm["PhoneNumber"];
+            string email = frm["Email"];
+            string address = frm["Address"];
 
             User user = db.Users.Where(us => us.Email == email).SingleOrDefault();
             user.FullName = fullname;

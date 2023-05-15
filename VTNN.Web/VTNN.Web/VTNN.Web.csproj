@@ -183,6 +183,7 @@
     <Content Include="Areas\Asset\img\customer\user-08.jpg" />
     <Content Include="Areas\Asset\img\customer\user-09.jpg" />
     <Content Include="Areas\Asset\img\customer\user-10.jpg" />
+    <Content Include="Areas\Asset\img\customer\user.png" />
     <Content Include="Areas\Asset\img\favicon.png" />
     <Content Include="Areas\Asset\img\img-01.jpg" />
     <Content Include="Areas\Asset\img\logo-icon.png" />
@@ -330,6 +331,7 @@
     <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\Active.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\Password.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\Role.cshtml" />
+    <Content Include="Scripts\filterrr.js" />
     <Content Include="wwwroot\css\custom\about.css" />
     <Content Include="wwwroot\css\custom\blog-details.css" />
     <Content Include="wwwroot\css\custom\blog-grid.css" />
@@ -406,6 +408,7 @@
     <Content Include="wwwroot\images\category\vegetables.jpg" />
     <Content Include="wwwroot\images\coming-soon.png" />
     <Content Include="wwwroot\images\countdown.png" />
+    <Content Include="wwwroot\images\desert-energy-products-banner.jpg" />
     <Content Include="wwwroot\images\error.png" />
     <Content Include="wwwroot\images\favicon.png" />
     <Content Include="wwwroot\images\google-store.png" />
@@ -472,6 +475,8 @@
     <Content Include="wwwroot\images\promo\home\09.jpg" />
     <Content Include="wwwroot\images\promo\shop\01.jpg" />
     <Content Include="wwwroot\images\promo\shop\03.jpg" />
+    <Content Include="wwwroot\images\promo\shop\banner-sp-khac.jpg" />
+    <Content Include="wwwroot\images\promo\shop\banner.jpg" />
     <Content Include="wwwroot\images\single-banner.jpg" />
     <Content Include="wwwroot\images\suggest\01.jpg" />
     <Content Include="wwwroot\images\suggest\02.jpg" />
@@ -505,6 +510,31 @@
     <Content Include="wwwroot\js\vendor\popper.min.js" />
     <Content Include="wwwroot\js\vendor\slick.min.js" />
     <Content Include="wwwroot\js\vendor\venobox.min.js" />
+    <Content Include="wwwroot\product\images\01.jpg" />
+    <Content Include="wwwroot\product\images\02.jpg" />
+    <Content Include="wwwroot\product\images\03.jpg" />
+    <Content Include="wwwroot\product\images\04.jpg" />
+    <Content Include="wwwroot\product\images\05.jpg" />
+    <Content Include="wwwroot\product\images\06.jpg" />
+    <Content Include="wwwroot\product\images\07.jpg" />
+    <Content Include="wwwroot\product\images\08.jpg" />
+    <Content Include="wwwroot\product\images\09.jpg" />
+    <Content Include="wwwroot\product\images\10.jpg" />
+    <Content Include="wwwroot\product\images\11.jpg" />
+    <Content Include="wwwroot\product\images\12.jpg" />
+    <Content Include="wwwroot\product\images\13.jpg" />
+    <Content Include="wwwroot\product\images\14.jpg" />
+    <Content Include="wwwroot\product\images\15.jpg" />
+    <Content Include="wwwroot\product\images\16.jpg" />
+    <Content Include="wwwroot\product\images\17.jpg" />
+    <Content Include="wwwroot\product\images\18.jpg" />
+    <Content Include="wwwroot\product\images\19.jpg" />
+    <Content Include="wwwroot\product\images\20.jpg" />
+    <Content Include="wwwroot\product\images\21.jpg" />
+    <Content Include="wwwroot\product\images\22.jpg" />
+    <Content Include="wwwroot\product\images\23.jpg" />
+    <Content Include="wwwroot\product\images\24.jpg" />
+    <Content Include="wwwroot\product\images\25.jpg" />
     <Content Include="wwwroot\product\images\4850402bi-do-giong-nhat.jpg" />
     <Content Include="wwwroot\product\images\ba-roi-heo-rut-suon.jpg" />
     <Content Include="wwwroot\product\images\ba-roi-heo-rut-sussson.jpg" />
@@ -551,6 +581,7 @@
     <Content Include="wwwroot\product\images\tinh-bot-nghe-vang-1.jpg" />
     <Content Include="wwwroot\product\images\xa-lach-bup-mo-thuy-canh.jpg" />
     <Content Include="wwwroot\product\images\xoai-say-deo.jpg" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\Active.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -614,7 +645,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\ProtectAdmin\" />
     <Folder Include="Models\" />
   </ItemGroup>

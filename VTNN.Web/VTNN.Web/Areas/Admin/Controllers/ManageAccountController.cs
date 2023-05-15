@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -68,7 +69,7 @@ namespace VTNN.Web.Areas.Admin.Controllers
                     db.Configuration.ValidateOnSaveEnabled = false;
                     db.Users.Add(user);
                     db.SaveChanges();
-
+                    //TempData["Message"] = " Thêm tài khoản thành công.";
                 }
                 return RedirectToAction("Index");
             }
@@ -102,19 +103,9 @@ namespace VTNN.Web.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    //string full_name = frm["full_name"];
-                    //string phone = frm["phone_number"];
-                    string email = frm["email"];
-                    //string password = frm["password"];
-                    //string address = frm["address"];
-                    //string confirm_password = frm["confirm_password"];
-                    string role = frm["role"];
-                    string is_active = frm["is_active"];
-                    //if (!password.Equals(confirm_password))
-                    //{
-                    //    ViewBag.Error = "Mật khẩu không khớp.";
-                    //    return View();
-                    //}
+                    string email = frm["Email"];
+                    string role = frm["Role"];
+                    string is_active = frm["Is_Active"];
                     var user = db.Users.Where(u => u.Email == email).SingleOrDefault();
 
                     if (user == null)
@@ -122,16 +113,12 @@ namespace VTNN.Web.Areas.Admin.Controllers
                         ViewBag.Error = "tài khoản không tồn tại";
                         return View();
                     }
-                    //user.full_name = full_name;
-                    //user.phone_number = phone;
-                    //user.email = email;
-                    //user.password = Helper.EncodePassword(password);
-                    //user.address = address;
                     user.Role = role.Equals("Quản trị") ? 1 : 0;
                     user.Is_Active = is_active == null ? false : true;
-                    //db.Configuration.ValidateOnSaveEnabled = false;
-                    //db.Entry(user).State = EntityState.Modified;
+                    db.Configuration.ValidateOnSaveEnabled = false;
+                    db.Entry(user).State = EntityState.Modified;
                     db.SaveChanges();
+                    //TempData["Message"] = " Cập nhật tài khoản thành công.";
                 }
                 return RedirectToAction("Index");
             }

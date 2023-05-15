@@ -26,7 +26,7 @@ namespace VTNN.Web.Controllers
                 .Sum(od => od.Quantity * od.Price);
             var detail = db.OrderDetails.Where(od => od.OrderId == id).ToList();
 
-            ViewBag.CreatedAt = order.Created_At;
+            ViewBag.Created_At = order.Created_At;
             ViewBag.Address = user.Address;
             ViewBag.OrderId = id;
             ViewBag.Quantity = quantity;
